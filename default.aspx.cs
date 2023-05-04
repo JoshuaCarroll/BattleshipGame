@@ -97,7 +97,7 @@ namespace BattleshipRaygun
                     if (board.Ship1.HitsToSink <= 0 && board.Ship2.HitsToSink <= 0)
                     {
                         lblFeedback.ForeColor = Color.DarkGreen;
-                        lblFeedback.Text = "YOU WIN!  Hit refresh to play again.";
+                        lblFeedback.Text = $"YOU WIN!  <a href='default.aspx?{DateTime.Now.Ticks}'>Click here to play again.</a>";
                         txtCoords.Enabled = false;
                         btnFire.Enabled = false;
                     }
@@ -108,7 +108,7 @@ namespace BattleshipRaygun
                 if (guessesLeft <= 0)
                 {
                     lblFeedback.ForeColor = Color.DarkRed;
-                    lblFeedback.Text = "GAME OVER - Hit refresh to try again.";
+                    lblFeedback.Text = $"GAME OVER  <a href='default.aspx?{DateTime.Now.Ticks}'>Click here to try again.</a>";
                     txtCoords.Enabled = false;
                     btnFire.Enabled = false;
                 }
